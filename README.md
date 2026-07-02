@@ -8,7 +8,6 @@ A desktop application built using **Java Swing** that demonstrates the use of ra
 1. **Five Pet Selections**: Choose between **Bird**, **Cat**, **Dog**, **Rabbit**, and **Pig**.
 2. **Dynamic Image Display**: Selecting a radio button instantly updates the displayed pet picture in the center panel.
 3. **Interactive Message Box**: Displays a GUI dialog box (`JOptionPane.showMessageDialog`) confirming your selection whenever a radio button is clicked.
-4. **Standalone & Portable**: Includes an automatic image generator (`ensureImagesExist()`) that renders cute cartoon pet illustrations on the fly if images are missing. You can compile and run this project anywhere without external dependencies!
 
 ---
 
@@ -27,11 +26,6 @@ javac RadioButtonDemo.java
 To launch the GUI application:
 ```bash
 java RadioButtonDemo
-```
-
-*(Optional)* To generate the pet illustration images (`images/` folder) without launching the GUI:
-```bash
-java RadioButtonDemo -generate-images
 ```
 
 ---
@@ -56,6 +50,5 @@ assignment2/
 - **`RadioButtonDemo` class**: Extends `JFrame` and implements `ActionListener` to handle user selection events.
 - **`ButtonGroup`**: Ensures that only one radio button can be selected at a time.
 - **`actionPerformed`**: Triggers whenever a user selects a pet:
-  1. Updates the `JLabel` icon to show the selected pet image.
+  1. Updates the `JLabel` icon to show the selected pet image from the `images/` directory.
   2. Spawns a `JOptionPane.showMessageDialog` showing the message `"You selected: [Pet Name]"`.
-- **`generatePetImage`**: Draws cute custom cartoon illustrations using Java's `Graphics2D` API and saves them as `.png` files in the `images/` directory.
